@@ -1,0 +1,21 @@
+AGentLogin
+
+all the details related to call will be recorded to 
+DATABASE
+DB_Rediff_clicktocall_Test
+Table:
+callStatus
+
+All the details of peding call in one interface 
+DATABASE
+DB_Rediff_clicktocall_Test
+Table:
+Agent_call_queue
+
+AdminLogin
+admin can add the agents in the
+
+In which case c2c will not insert request in Agent_call_queue
+when no agent is logged in or working hours are closed
+
+Or incase if customer do not have the agentlogin product

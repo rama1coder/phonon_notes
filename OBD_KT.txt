@@ -1,0 +1,12 @@
+OBD-outbound dailer calling
+basically its the bulk calling
+
+DB:OUTBoundDialer
+
+
+e<CustID> <Campid>_OBD_P<PriorityNc>_<TimeSta
+mp> <JobName>.cov 
+
+text format of the file to e saved on SFTP
+Every job hasmax 10000  jobs per job then ndnc numbers are also get removed
+

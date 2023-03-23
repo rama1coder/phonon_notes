@@ -1,0 +1,43 @@
+Multitasking 
+is the performing multiple tasks at the same time
+two type of multitasking 
+1)process based multitasking 
+2)thread based multitasking
+
+PErforming multiple threads a 
+
+Thread Schedular:
+It is responsible for scheduling threads
+If multiple threads are waiitng to be executed thread schdular will decide in which order threads will be executed
+
+we dont know which order threads will execute:We cant expext exam algorithm 
+followed by thread scheduler it is varied from JVm to jvm hence we cant expect
+thread execution order and exact o/p hence whenever situtation comes to multithreading there is no guarantee for
+exact o/p but we can provide several possible o/p
+
+Difference btween start() and run() method?
+if we call run() method rather than start()
+in start() method new thread will be created which is responsible for the execution of run method but 
+in the casae of run() method a new thread wotn be created and run() method will be executed just like normal 
+method call nby main thread heance if we replace t.start() with t,run() then the o/p is like normal
+
+Why we have to call start() method?
+thread class start() method is responsible to register the thread with thread 
+schedular and all other mendatory activities hence without executing thread clas
+start() method there is no chance of starting a new thread in java due to this
+thread class start method is considered as heart of multithreading'
+
+ start()
+{ 
+registser this thread with thread schedular
+perform all other mandatory activitites
+invoke run() method
+}
+
+Overloading of run method is it possible?
+overloading of run()method ois possible but thread class start method will 
+call only no argumnet run method.
+
+what if we call start() method without overrding run() method 
+we wont get any o/p
+

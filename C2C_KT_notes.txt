@@ -1,0 +1,65 @@
+C2c click to call
+this is the widget a js widget on customer webapge or app
+
+
+FLOW:
+Part1-
+data will come from  widget to phononC2c server then validated and then it is dumped in database
+even invalid requests are also dumped into the database but not sent for further processing
+ Widget will send the data required for request procesing
+  CustomerToken-
+    -Token given to the vendors
+  User defined data 
+    -UDF1,UDF2,UDF3,UDF4,UDF5
+  Different for different customers
+(what data is coming in the UDF you will find from the Customere_UDF_Master table)
+  
+ PART2-
+DATABASE:DB_Rediff_click2call_test (MSSql)(C2C)
+CustomerMaster
+customer related data
+
+
+Custtoken is given to the customer and then 
+it is mapped with the customer id the afterwords all work is done with 
+
+customer id 
+ id of the customer
+OACCheck
+ (boolean) if the otp verification is on or orff
+OAC time period
+ (number) time in min for otp valid or expired
+
+NDNCcheck (boolean)
+
+useUDfAdverNumlookup
+get the number from AdverNumlookup number of agents
+
+MaxRetryDays
+Days for call attempts
+
+MaxRetryUpdate 
+
+*DB-Customere_UDF_Master*
+User defined data 
+    -UDF1,UDF2,UDF3,UDF4,UDF5
+  Different for different customers
+(what data is coming in the UDF you will find from the Customere_UDF_Master table)
+CUstomer_UDF_Master
+UDF4=advfirst(first call agent then customer)
+UDF5=customer product data(C2C or retargating)
+
+NACK_CODE_Master:
+gives extra info about call status for every call detail
+
+SPAMfilter.jar is dependency added in project 
+which usesa XML file which is used to filter spam 
+
+e.g.in 1 hr not more than 5 calls from same number
+
+
+*****DAILERS********
+
+
+For c2c we use dialer TRITON(Third party tools all 92 or 88 server)
+for OBD we use dialer Asterisk

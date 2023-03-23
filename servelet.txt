@@ -1,0 +1,35 @@
+how to create the servlet
+
+three ways too create the servlet
+1)by implementing the servelet interface
+2)by inheriting the GenericServlet class
+3)by inheriting the  HttpServlet class
+
+
+three basic methods in the servlets
+init()
+servic()
+destroy()
+
+Deployment Descriptor
+Web.xml
+needed in every java web applications
+files that configures of web java applications
+sevlets dclaaration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

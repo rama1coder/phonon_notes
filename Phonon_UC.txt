@@ -1,0 +1,129 @@
+
+Phonon uc-Unified Comm   NumberUpload:this for
+UI for login Three types of login:
+1)ADmininsrator 
+2)Superviser
+3)Excecutive
+
+Executive:
+Create job:
+ Campaign is nothing but some events about the airplane
+e.g cancelled flights,
+    delayed flight.
+    Flight number change
+Types of campaigns
+Unplanned or Planned(Just to differentiate) 
+
+Two types of upload:
+1)Flat file
+2)Navitaire file upload
+
+Parts of application:
+1)Number Upload
+This will take the flat file and upload data to the database or for navitaire it will hit api and save data into thea database
+2)
+ 1)Outbound Calling
+ 2)Bulk SMS
+ 3)Bulk Email
+ this will do respecting job 
+ then update the status 
+ the update the api response
+3)Report response:send the response at the end of the day
+PNR=Unique identity for a Passenger
+Same person travelling 
+
+DB
+DB[]Customer Master=customer related data,
+DB[]Campaign=Campaign related data e.g. Flight is delayed
+DB[]CamapaignSMSConfig=Stored the text supposed to send to CustomerDB
+DB[]EmailConfig=Stored the text sent to mail to customer
+DB[]VoiceConfig=Voicescript code
+
+Table[]JobMaster
+Flight relaetd data,Flight number depaerture arrival time
+
+Table[]JobNumber
+PNR,and personal details of the customer(Not email or phone number)
+
+Table[] Jobnumberdetails
+Phone number related data of the customer
+
+Table[]JobEmailDetails
+
+Three Tasks Done by
+  VoiceSchedular
+  EmailSchedular
+  SMSSchedular
+
+Three types of file upload
+  Flat file
+  Navitaire
+  Queue Based
+
+Push SMS service:
+ will send the sms for below for types
+ ->Gate
+ ->Feedback
+ ->Upsell
+ ->Queue
+
+GATE:
+  Sending notification 30 mins before th flight
+
+Feedback:
+  Asking customers about the feedback of the flight
+
+UpSell
+  These notification are shared three times
+  24 hrs before deaparture
+  12 hrs before departure
+  5 hrs before departure
+
+Booking 
+  Get the PNRs ,Get the details, Hit the notifications
+
+
+
+ ARMS API to get the Flight Data
+   Give the flight data of three days 
+   {Yesterday,Today,Tommorow}
+
+
+----------------------
+NAVITAIRE SYSTEM     -
+---------------------
+Client has provided us with the APIs(GoFirst)
+Firstly you have to create a session by using **logon apis** and id password given by clients
+then unique signature will be created Use that signature to access all the other required details
+Methods defined in the documents given by client to fetch required data
+
+Two types of Uploads
+
+->Flight Based
+     1)Operation Mangager API
+       Method:
+       1.GetMAniFest Filtred
+       To get the all PNR details by uploading signature and flight details to XML
+     2)Booking Manager API
+       Method:
+       GetBooking
+       To get All the contact deatails using PNR which we got from GetManiFest
+
+->Queue Based'
+    1)QueueManager API
+      Method:
+      FindQueueBookingsByID
+      Get all the PNRs from here
+2)Booking Manager API
+     Method:
+     GetBooking
+     To get All the contact deatails using PNR which we got from GetManiFest
+
+->HistoryApi
+
+ 
+
+
+Cancelled flight will send the getdetails apis to confirm the flight cancellation
+
+

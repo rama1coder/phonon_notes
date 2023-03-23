@@ -1,0 +1,12 @@
+http is a stateless protocol
+session tracking is the way to maintain the state of an user 
+also known as session management
+
+
+Four techniques used as the session tracking
+1.Cookies
+2.Hidden Form Feild
+3.URL Rewriting
+4.Httsession
+
+1>Cookies is the small peice of information persisted btween multiple client request

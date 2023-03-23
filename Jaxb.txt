@@ -1,0 +1,84 @@
+JAXb
+It is used to convert java object into xml and xml objects into java
+
+Marshalling -Converting java object to xml
+Unmarshalling -Converting xml to java object.
+
+JAXB is api given by sun microsystems
+
+
+----------------------------------------------------------------------------
+Three steps for marshaling or unmarshalling
+
+1)Create a binding class(Just a POJO class)
+2)Define Mapping b/w java programming elements into xml elements
+(Mapping can be defined using the jaxb annontations)
+  @Xmlroortelements:
+    To covert a class into xml the root elemnt name is class name 
+  @xmlelements
+    It is used to defined element used to define subelement of the root or is nullable or required
+  @xmlattributes:
+    It is used to define attributes of the element
+    
+3) Writing the logic for marshalling or unmarshalling as per logic
+
+----->EXAMPLE----->
+
+@XmlRootElement
+public class implements serialiazable
+{
+private eid
+private ename
+private elname
+
+#public getter and setters methods
+
+} 
+-------------------------------------------------------->MARSHALLING
+Driver class
+
+public class marshaldriver
+{
+ public static void main(String []args)
+  {
+  Employee emp1=new Employee();
+  emp1.seteid(1);
+  emp1.setename("Ramrkishna");
+  emp1.setelname("Gaikwad");
+
+////step 1 Create JAXB context Object Method
+////To do so use newInstance static factory method from jaxb Object class
+  
+JAXBContext context=JAXBContext.newInstance(Employee.getClass());//throws jaxb exception
+
+//create marshaller object from context 
+Marshaller marshaller=context.createMarshaller();
+
+//call the marshall method (overriden)with the object name you want to convert 
+marshaller.marshall(emp1,system.out);
+
+  }
+
+}
+
+------------------------------------------------------>UNMARSHALLING
+
+public class Unmarshalldriver
+{
+public static void main throws JAXBException(String []args)
+{
+File file =new File();
+JAXBContext context=JAXBContext.newInstance(Emp.class);
+Unmarshaller unmarshaller=context.createUnmarshaller();
+Emp e1=unmarshaller.unmarshall(file);
+System.out.println(e1.getname);
+
+}
+}
+---------------------------------------------------------------------
+
+
+
+
+
+
